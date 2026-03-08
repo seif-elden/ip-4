@@ -1,0 +1,162 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titling}
+
+% Code listing style
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red!70!black},
+    commentstyle=\color{green!50!black},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    tabsize=2
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CSE341 -- Internet Programming}
+\lhead{Lab 4: To-Do List}
+\cfoot{\thepage}
+
+\title{
+    \vspace{-1cm}
+    \Large\textbf{Ain Shams University} \\
+    \large Faculty of Engineering \\
+    \large Computer and Systems Engineering Department \\
+    \vspace{0.5cm}
+    \LARGE\textbf{CSE341 -- Internet Programming} \\
+    \vspace{0.3cm}
+    \Large Lab 4: Interactive Pro To-Do List \\
+    \vspace{0.5cm}
+}
+\author{Seif Elden}
+\date{Spring 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+% --------------------------------------------------------
+\section{Introduction}
+This report documents the development of an interactive To-Do List web application built using HTML, CSS, and JavaScript. The application follows a class-based MVC architecture and includes features such as localStorage persistence, task filtering and sorting, inline editing, and CSS transitions.
+
+% --------------------------------------------------------
+\section{GitHub Repository}
+The source code is available at: \\
+\url{https://github.com/seif-elden/ip-4}
+
+% --------------------------------------------------------
+\section{Application Features}
+\begin{itemize}
+    \item \textbf{Task Class}: Each task is an instance of a \texttt{Task} class with \texttt{id}, \texttt{description}, \texttt{completed}, and \texttt{createdAt} properties.
+    \item \textbf{Add / Delete / Toggle}: Users can add new tasks, delete existing ones, and toggle completion state.
+    \item \textbf{Inline Editing}: Tasks can be renamed in-place.
+    \item \textbf{Persistence}: Tasks are saved to and loaded from \texttt{localStorage}.
+    \item \textbf{Filtering}: Filter buttons for All, Completed, and Incomplete tasks.
+    \item \textbf{Sorting}: Sort tasks alphabetically (A--Z) or by creation time.
+    \item \textbf{Timestamps}: Each task displays its creation date and time.
+    \item \textbf{Icons}: Unicode icons are used for toggle, edit, and delete actions.
+    \item \textbf{CSS Transitions}: Smooth slide-in animation for new tasks and fade-out for deleted tasks.
+    \item \textbf{MVC Structure}: The app is organized into a \texttt{TaskManager} controller class that manages the model (task array) and view (DOM rendering).
+\end{itemize}
+
+% --------------------------------------------------------
+\section{Project Structure}
+\begin{verbatim}
+ip-4/
+├── index.html      (HTML structure)
+├── style.css       (Styling & animations)
+├── app.js          (Task class + TaskManager MVC)
+├── .gitignore
+└── task.txt        (Lab requirements)
+\end{verbatim}
+
+% --------------------------------------------------------
+\section{Screenshots}
+
+\subsection{Main Interface -- Empty State}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Empty to-do list on first load}
+    \vspace{3cm}}}
+\end{center}
+% Uncomment and replace with actual screenshot:
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/empty-state.png}
+% \end{center}
+
+\subsection{Adding Tasks}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Several tasks added to the list}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/tasks-added.png}
+% \end{center}
+
+\subsection{Completing Tasks}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Some tasks marked as completed (strike-through)}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/completed-tasks.png}
+% \end{center}
+
+\subsection{Editing a Task}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Inline editing mode for a task}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/edit-mode.png}
+% \end{center}
+
+\subsection{Filtering -- Completed Only}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Filter set to ``Completed'' showing only done tasks}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/filter-completed.png}
+% \end{center}
+
+\subsection{Filtering -- Incomplete Only}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Filter set to ``Incomplete'' showing pending tasks}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/filter-incomplete.png}
+% \end{center}
+
+\subsection{Sorting}
+\begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}
+    \textit{Insert screenshot: Tasks sorted alphabetically or by time}
+    \vspace{3cm}}}
+\end{center}
+% \begin{center}
+%     \includegraphics[width=0.85\textwidth]{screenshots/sorted.png}
+% \end{center}
+
+% --------------------------------------------------------
+\section{Conclusion}
+The To-Do List application successfully implements all required features including the basic task management (add, delete, toggle) and the ``Pro'' enhancements (localStorage persistence, filtering, sorting, timestamps, inline editing, icons, CSS transitions, and MVC class-based architecture). The project is hosted on GitHub for version control and collaboration.
+
+\end{document}
