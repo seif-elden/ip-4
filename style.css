@@ -1,0 +1,228 @@
+/* ---------- Reset & Base ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+}
+
+/* ---------- App Container ---------- */
+.app-container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    max-width: 520px;
+    padding: 32px 28px;
+}
+
+.app-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 24px;
+    font-size: 1.8rem;
+}
+
+/* ---------- Input Section ---------- */
+.input-section {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #667eea;
+}
+
+#addBtn {
+    padding: 12px 18px;
+    background: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.15s;
+}
+
+#addBtn:hover {
+    background: #5a6fd6;
+    transform: scale(1.05);
+}
+
+/* ---------- Controls ---------- */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.filter-buttons, .sort-buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.filter-btn, .sort-btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: all 0.25s;
+}
+
+.filter-btn:hover, .sort-btn:hover {
+    background: #e0e0e0;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: #fff;
+    border-color: #667eea;
+}
+
+/* ---------- Task List ---------- */
+.task-list {
+    list-style: none;
+    min-height: 40px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: #fafafa;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    transition: opacity 0.4s, transform 0.4s, background 0.3s;
+    animation: slideIn 0.35s ease;
+}
+
+.task-item:hover {
+    background: #f0f0f0;
+}
+
+.task-item.removing {
+    opacity: 0;
+    transform: translateX(60px);
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+.task-item.completed .task-timestamp {
+    color: #ccc;
+}
+
+/* Toggle (checkbox icon) */
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Task text & timestamp */
+.task-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.task-text {
+    font-size: 1rem;
+    color: #333;
+    word-break: break-word;
+}
+
+.task-timestamp {
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* Edit input */
+.edit-input {
+    flex: 1;
+    padding: 6px 10px;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Action buttons */
+.task-actions {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.edit-btn, .delete-btn, .save-btn, .cancel-btn {
+    background: none;
+    border: none;
+    font-size: 1.15rem;
+    cursor: pointer;
+    padding: 4px 6px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.edit-btn:hover { background: #e8f0fe; }
+.delete-btn:hover { background: #fce4e4; }
+.save-btn:hover { background: #e6f9e6; }
+.cancel-btn:hover { background: #f5f5f5; }
+
+.edit-btn:hover, .delete-btn:hover, .save-btn:hover, .cancel-btn:hover {
+    transform: scale(1.15);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    text-align: center;
+    padding-top: 12px;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

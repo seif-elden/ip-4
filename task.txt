@@ -1,0 +1,43 @@
+My Interactive To Do List
+● Build a simple To-Do List web app using
+HTML, CSS, and JavaScript.
+● Specifications:
+● HTML structure (minimum requirements)
+○ An input field for task description.
+○ An “Add Task” button.
+○ A list (<ul> or <div>) to display tasks.
+● JavaScript (minimum requirements)
+○ Create a Task class
+○ Store tasks in an array.
+○ Add tasks dynamically to the page using
+innerHTML or DOM manipulation.
+○ Allow toggling a task’s completion state by
+clicking on it (change text style or color).
+○ Allow deleting a task.
+○ Use simple CSS to mark completed tasks
+with a strike-through or color change.
+● Make it look good (experiment with CSS)
+My Interactive “Pro” To Do
+List – For Vibe Coders
+● Additional requirements:
+● Persistence:
+○ Save and load tasks using localStorage.
+● Filtering & Sorting:
+○ Add buttons to filter tasks: All, Completed,
+Incomplete.
+○ Allow sorting alphabetically or by creation time.
+● Enhancements:
+○ Add a timestamp when a task is created.
+○ Add an “Edit” feature to rename a task.
+● UI Upgrade:
+○ Use dynamic icons ( ) instead of text
+buttons.
+○ Apply CSS transitions when toggling or deleting
+tasks.
+● Task Manager Class:
+○ Convert the app into a class-based MVC
+structure 
+
+
+After making the lab task of Lab 4 (To Do List), prepare a report showing the Frontend GUI developed and Github repository link you created that includes the code.
+https://github.com/seif-elden/ip-4
